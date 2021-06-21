@@ -55,3 +55,15 @@ th, td {
 p{
     text-align: justify;
 }
+.references{
+    margin-bottom: 50px;
+}
+.references li a{
+    text-decoration: none;
+    color: #9494b8;
+}
+.references li a:hover{
+    text-decoration: underline;
+    color: #3d3a66;
+    font-size: 25px;
+}
