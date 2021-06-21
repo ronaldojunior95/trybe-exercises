@@ -1,17 +1,20 @@
-._header{
-    color: #e0e0eb;
-    text-align: center;
-    background-color: #0b0b13;
-}
 body{
     color: #9494b8;
     background-color: #0b0b13;
+}
+h3{
+    text-decoration: underline;
 }
 nav{
     border-bottom: 5px inset #050508d3;
     color: #29293d; 
     padding: 1px 1px 1px 1px;
     background-color: #151520;
+}
+._header{
+    color: #e0e0eb;
+    text-align: center;
+    background-color: #0b0b13;
 }
 .navigation li{
     display: inline-block;
@@ -28,7 +31,11 @@ nav{
     color: #e0e0e9;
     font-size: 20px;
 }
-h3{
-    text-decoration: underline;
+.images{
+    width: 500px;
+    padding-right: 4px;
+    padding-bottom: 6px;
+    background-color: rgba(32, 32, 54, 0.699);
+    border-radius: 3px;
 }
 
