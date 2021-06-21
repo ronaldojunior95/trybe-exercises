@@ -2,3 +2,30 @@
     border-bottom: 2px inset black;
     color: #29293d;
 }
+body{
+    color: #47476b;
+}
+nav{
+    border-bottom: 1px inset black;
+    border-left: 1px inset black;
+    border-right: 1px inset black;
+    color: #29293d; 
+    padding: 1px 1px 1px 1px;
+    background-color: #1f1f2e;
+}
+.navigation li{
+    display: inline-block;
+    margin-left: 18%;
+    padding: 2px 10px 2px 10px;
+    background-color: #2e2e42;
+    border-radius: 5px;
+}
+.navigation li:hover{
+    background-color: #45456e;
+}
+.nounderlinetext{
+    text-decoration: none;
+    color: #e0e0e9;
+    font-size: 20px;
+}
+
