@@ -1,17 +1,17 @@
 ._header{
-    border-bottom: 2px inset black;
-    color: #29293d;
+    color: #e0e0eb;
+    text-align: center;
+    background-color: #0b0b13;
 }
 body{
-    color: #47476b;
+    color: #9494b8;
+    background-color: #0b0b13;
 }
 nav{
-    border-bottom: 1px inset black;
-    border-left: 1px inset black;
-    border-right: 1px inset black;
+    border-bottom: 5px inset #050508d3;
     color: #29293d; 
     padding: 1px 1px 1px 1px;
-    background-color: #1f1f2e;
+    background-color: #151520;
 }
 .navigation li{
     display: inline-block;
