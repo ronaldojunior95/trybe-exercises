@@ -20,6 +20,7 @@
         </div>
       </div>
       <script>
+          //Parte 1
             const elementoOndeVoceEsta = document.querySelector('#elementoOndeVoceEsta');
 
             const pai = elementoOndeVoceEsta.parentElement;
@@ -37,7 +38,25 @@
             const terceiroFilho = elementoOndeVoceEsta.nextElementSibling;
 
             const terceiroFilho2 = pai.lastElementChild.previousElementSibling;
+
+            //Parte 2
+
+            const irmaoElementoOndeVoceEsta = document.createElement('div');
+            irmaoElementoOndeVoceEsta.id = 'irmaoElementoOndeVoceEsta';
+            pai.appendChild(irmaoElementoOndeVoceEsta);
+
+            const filhoElementOndeVoceEsta = document.createElement('div');
+            filhoElementOndeVoceEsta.id = 'filhoElementoOndeVoceEsta';
+            elementoOndeVoceEsta.appendChild(filhoElementOndeVoceEsta);
+
+            const filhoPrimeiroFilhoDoFilho = document.createElement('div');
+            filhoPrimeiroFilhoDoFilho.id = 'filhoPrimeiroFilhoDoFilho';
+            primeiroFilhoDoFilho.appendChild(filhoPrimeiroFilhoDoFilho);
+
+        
+            const terceiroFilho3 = filhoPrimeiroFilhoDoFilho.parentElement.parentElement.nextElementSibling;
             
+            //Parte 3
       </script>
 </body>
 </html>
