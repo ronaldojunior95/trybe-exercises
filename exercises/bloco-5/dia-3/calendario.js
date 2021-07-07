@@ -42,7 +42,7 @@ function createDaysOfTheWeek() {
   addDaysToMonth();
 
   //Ex 2
-  function holidaysButton(Feriados){
+  function createHolidaysButton(Feriados){
     const btnContainer = document.querySelector('.buttons-container');
     const button = document.createElement('button');
     button.innerHTML = Feriados;
@@ -50,7 +50,7 @@ function createDaysOfTheWeek() {
     btnContainer.appendChild(button);
   }
 
-  holidaysButton('Feriados');
+  createHolidaysButton('Feriados');
 
   //Ex 3
   function changeHolidaysColor(){
@@ -70,7 +70,7 @@ function createDaysOfTheWeek() {
   button.addEventListener('click', changeHolidaysColor);
 
   //Ex 4
-  function fridayButton(Sexta){
+  function createFridayButton(Sexta){
     const btnContainer = document.querySelector('.buttons-container');
     const button = document.createElement('button');
     button.innerHTML = Sexta;
@@ -78,7 +78,35 @@ function createDaysOfTheWeek() {
     btnContainer.appendChild(button);
   }
 
-  fridayButton('Sexta-Feira');
+  createFridayButton('Sexta-Feira');
+
+  //Ex 5
+  const fridays = document.querySelectorAll('.friday')
+  const fridayBtn = document.querySelector('#btn-friday');
+  let fridayOriginalTexts = [];
+
+  function getOriginalFridayText(){
+    for (day of fridays){
+        let text = day.innerHTML;
+        fridayOriginalTexts.push(text);
+    }
+  }
+  function changeFridayText(){
+    let newText = 'Sextou!';
+    for (let i = 0; i < fridays.length; i += 1){
+        let originalText = fridayOriginalTexts[i];
+        let day = fridays[i];
+        if (day.innerHTML !== newText){
+            day.innerText = newText;
+        } else{
+            day.innerText = originalText;
+        }
+    }
+  }
+  getOriginalFridayText();
+  fridayBtn.addEventListener('click', changeFridayText);
+
+
 
 
   
