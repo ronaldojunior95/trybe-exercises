@@ -37,41 +37,49 @@ function createDaysOfTheWeek() {
 
         days.appendChild(day);
     }
-    
-    //remove os dias de novembro.
-    for (let i = 0; i < 2; i += 1){
-        let day = days.children[i];
-        day.innerHTML = ''
-    }
   }
 
   addDaysToMonth();
 
   //Ex 2
-  function holidays(Feriados){
+  function holidaysButton(Feriados){
     const btnContainer = document.querySelector('.buttons-container');
     const button = document.createElement('button');
-    button.innerHTML = 'Feriados';
+    button.innerHTML = Feriados;
     button.id = 'btn-holiday';
     btnContainer.appendChild(button);
   }
 
-  holidays();
+  holidaysButton('Feriados');
 
   //Ex 3
   function changeHolidaysColor(){
     const days = document.querySelectorAll('.holiday');
+    let newColor = 'red';
+    let backgroundColor = 'rgb(238,238,238)';
     for (day of days){
-        if (day.style.backgroundColor !== 'red'){
-            day.style.backgroundColor = 'red';
+        if (day.style.backgroundColor !== newColor){
+            day.style.backgroundColor = newColor;
         } else{
-            day.style.backgroundColor = 'rgb(238,238,238)';
+            day.style.backgroundColor = backgroundColor;
         }
     }
   }
 
   const button = document.querySelector('#btn-holiday');
   button.addEventListener('click', changeHolidaysColor);
+
+  //Ex 4
+  function fridayButton(Sexta){
+    const btnContainer = document.querySelector('.buttons-container');
+    const button = document.createElement('button');
+    button.innerHTML = Sexta;
+    button.id = 'btn-friday';
+    btnContainer.appendChild(button);
+  }
+
+  fridayButton('Sexta-Feira');
+
 
   
 
