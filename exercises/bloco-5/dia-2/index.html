@@ -57,6 +57,28 @@
             const terceiroFilho3 = filhoPrimeiroFilhoDoFilho.parentElement.parentElement.nextElementSibling;
             
             //Parte 3
+            const paiDoPai = document.querySelector('#paiDoPai');
+            let pai2 = paiDoPai.querySelector('#pai');
+            
+            for (let i = 0; i < paiDoPai.children.length; i += 1){
+                if (paiDoPai.children[i].id !== 'pai'){
+                    paiDoPai.removeChild(i);
+                }      
+            }
+            
+            for (let index = pai2.childNodes.length - 1; index >= 0; index -= 1){
+                const currentChildren = pai2.childNodes[index];
+                if (currentChildren.id !== 'elementoOndeVoceEsta'){
+                    currentChildren.remove();
+                 }   
+            }
+            
+            
+
+            
+          
+            
       </script>
 </body>
 </html>
+
