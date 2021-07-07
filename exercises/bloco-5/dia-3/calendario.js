@@ -25,18 +25,15 @@ function createDaysOfTheWeek() {
         day.classList = 'days';
 
         //Adiciona classes dependendo do dia.
-        if (day.innerHTML === '24' || day.innerHTML === '31'){
-            console.log(day);
+        if (day.innerHTML === '24' || day.innerHTML === '31'){;
             day.classList.add('holiday');
         } else if (day.innerHTML === '4' || day.innerHTML === '11' || day.innerHTML === '18'){
-            console.log(day);
             day.classList.add('friday');
         } else if (day.innerHTML === '25'){
-            console.log(day);
             day.classList.add('holiday');
             day.classList.add('friday');
         }
-        
+
         days.appendChild(day);
     }
     
@@ -48,3 +45,14 @@ function createDaysOfTheWeek() {
   }
 
   addDaysToMonth();
+
+  function holidays(Feriados){
+    const btnContainer = document.querySelector('.buttons-container');
+    const button = document.createElement('button');
+    button.innerHTML = 'Feriados';
+    button.id = 'btn-holiday';
+    btnContainer.appendChild(button);
+  }
+
+  holidays();
+
