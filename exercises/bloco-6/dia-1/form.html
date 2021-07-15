@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Form Currículo</title>
+</head>
+<body>
+	<form action="GET">
+	<fieldset id="dados-pessoais">
+		<label for="name-input">Nome:</label>
+		<input type="text" name="name" id="name-input" maxlength="40" required>
+		<label for="email-input">Email:</label>
+		<input type="email" name="email" id="email-input" maxlength="50" required>
+		<label for="cpf-input">Cpf:</label>
+		<input type="text" name="cpf" id="cpf-input" maxlength="11" required>
+		<br>
+		<label for="endereco-input">Endereço:</label>
+		<input type="text" name="endereco" id="endereco-input" maxlength="200" required>
+		<label for="cidade-input">Cidade:</label>
+		<input type="text" name="cidade" id="cidade-input" maxlength="28" required>
+		<label for="estado-input">Estado:</label>
+		<select name="estado" id="estado-input" required>
+
+		</select>
+		<label for="casa-input">Casa</label>
+		<input type="radio" name="moradia" id="casa-input" required>
+		<label for="apto-input">Apartamento</label>
+		<input type="radio" name="moradia" id="apto-input" required>
+	</fieldset>
+	<fieldset id="ultimo-emprego">
+		<label for="resumo-curriculo">Resumo do Currículo:</label>
+		<textarea name="curriculo" id="resumo-curriculo" cols="30" rows="10" maxlength="1000" required></textarea>
+		<br>
+		<label for="cargo-input">Cargo:</label>
+		<input type="text" name="cargo" id="cargo-input" maxlength="40" required>
+		<label for="descricao-cargo-input">Descrição do cargo:</label>
+		<input type="text" name="cargo" id="descricao-cargo-input" maxlength="500" required>
+		<p>Data de início:</p>
+		<label for="dia-input">Dia:</label>
+		<input type="text" name="dia" id="dia-input">
+		<label for="mes-input">Mês:</label>
+		<input type="text" name="mes" id="mes-input">
+		<label for="ano-input">Ano:</label>
+		<input type="text" name="ano" id="ano-input">
+	</fieldset>
+	<button type="submit" id="enviar-btn">Enviar</button>
+</form>
+<button id="apagar-btn">Apagar</button>
+<script src="script.js"></script>
+</body>
+</html>
