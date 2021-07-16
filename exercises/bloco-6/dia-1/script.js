@@ -107,25 +107,46 @@ function getDateValues(div) {
 function createDataFeedback() {
 	const body = document.querySelector('#main');
 	const div = document.createElement("div");
+	const oldDiv = document.querySelector('.data-div');
+	const divError = document.querySelector('.error-div');
+
+	if (divError !== null) {
+		body.removeChild(divError);
+	}
+	if (oldDiv !== null) {
+		body.removeChild(oldDiv);
+	} 
 
 	getIdValues(div);
 	getAdressValues(div);
 	getHouseValues(div);
 	getCurriculumValues(div);
 	getDateValues(div);
+	div.classList.add('data-div');
+	body.appendChild(div);
+}
+
+function showErrorMensage() {
+	const body = document.querySelector('#main');
+	const div = document.createElement("div");
+	const divError = document.querySelector('.error-div');
+	let canMakeData = verifyDate();
+	if (canMakeData === null) {
+		window.alert("Dia, Mês ou Ano Inválido");
+	}
+	if (divError !== null) {
+		body.removeChild(divError);
+	} 
+	div.innerText = "Impossivel Enviar, falta campo para preencher!"
+	div.classList.add('error-div');
 	body.appendChild(div);
 }
 
 function sendData(event) {
 	event.preventDefault();
-	let canMakeData = verifyDate();
 	let inputsValues = verifyInputValues();
-	if (canMakeData === null) {
-		window.alert("Dia, Mês ou Ano Inválido");
-		return 'Error';
-	} else if (inputsValues === false) {
-		window.alert("Preencha todos os campos");
-		return 'Error';
+	if (inputsValues === false) {
+		showErrorMensage();
 	} else {
 		createDataFeedback();
 	}
