@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="paiDoPai">
+        <div id="pai">
+          <div id="primeiroFilho"></div>
+          <div id="elementoOndeVoceEsta">
+            <div id="primeiroFilhoDoFilho"></div>
+            <div id="segundoEUltimoFilhoDoFilho"></div>
+          </div>
+          Atenção!
+          <div id="terceiroFilho"></div>
+          <div id="quartoEUltimoFilho"></div>
+        </div>
+      </div>
+      <script>
+          //Parte 1
+            const elementoOndeVoceEsta = document.querySelector('#elementoOndeVoceEsta');
+
+            const pai = elementoOndeVoceEsta.parentElement;
+            pai.style.color = 'Red';
+
+            const primeiroFilhoDoFilho = elementoOndeVoceEsta.firstElementChild;
+            primeiroFilhoDoFilho.innerText = 'primeiroFilhoDoFilho'
+
+            const primeiroFilho = pai.firstElementChild;
+
+            const primeiroFilho2 = elementoOndeVoceEsta.parentElement.firstElementChild;
+
+            const textElement = elementoOndeVoceEsta.nextSibling;
+
+            const terceiroFilho = elementoOndeVoceEsta.nextElementSibling;
+
+            const terceiroFilho2 = pai.lastElementChild.previousElementSibling;
+
+            //Parte 2
+
+            const irmaoElementoOndeVoceEsta = document.createElement('div');
+            irmaoElementoOndeVoceEsta.id = 'irmaoElementoOndeVoceEsta';
+            pai.appendChild(irmaoElementoOndeVoceEsta);
+
+            const filhoElementOndeVoceEsta = document.createElement('div');
+            filhoElementOndeVoceEsta.id = 'filhoElementoOndeVoceEsta';
+            elementoOndeVoceEsta.appendChild(filhoElementOndeVoceEsta);
+
+            const filhoPrimeiroFilhoDoFilho = document.createElement('div');
+            filhoPrimeiroFilhoDoFilho.id = 'filhoPrimeiroFilhoDoFilho';
+            primeiroFilhoDoFilho.appendChild(filhoPrimeiroFilhoDoFilho);
+
+        
+            const terceiroFilho3 = filhoPrimeiroFilhoDoFilho.parentElement.parentElement.nextElementSibling;
+            
+            //Parte 3
+            const paiDoPai = document.querySelector('#paiDoPai');
+            let pai2 = paiDoPai.querySelector('#pai');
+            
+            for (let i = 0; i < paiDoPai.children.length; i += 1){
+                if (paiDoPai.children[i].id !== 'pai'){
+                    paiDoPai.removeChild(i);
+                }      
+            }
+            
+            for (let index = pai2.childNodes.length - 1; index >= 0; index -= 1){
+                const currentChildren = pai2.childNodes[index];
+                if (currentChildren.id !== 'elementoOndeVoceEsta'){
+                    currentChildren.remove();
+                 }   
+            }
+            
+            
+
+            
+          
+            
+      </script>
+</body>
+</html>
+
