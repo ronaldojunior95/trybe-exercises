@@ -9,41 +9,41 @@
 <body id="main">
 	<form action="GET">
 	<fieldset id="dados-pessoais">
-		<label for="name-input">Nome:</label>
-		<input type="text" name="name" id="name-input" maxlength="40" required>
-		<label for="email-input">Email:</label>
-		<input type="email" name="email" id="email-input" maxlength="50" required>
-		<label for="cpf-input">Cpf:</label>
-		<input type="text" name="cpf" id="cpf-input" maxlength="11" required>
+		<label class="labels-id" for="name-input">Nome:</label>
+		<input type="text" name="name" id="name-input" class="inputs-id inputs"  maxlength="40" required>
+		<label class="labels-id"  for="email-input">Email:</label>
+		<input type="email" name="email" id="email-input" class="inputs-id inputs" maxlength="50" required>
+		<label class="labels-id"  for="cpf-input">Cpf:</label>
+		<input type="text" name="cpf" id="cpf-input" class="inputs-id inputs" maxlength="11" required>
 		<br>
-		<label for="endereco-input">Endereço:</label>
-		<input type="text" name="endereco" id="endereco-input" maxlength="200" required>
-		<label for="cidade-input">Cidade:</label>
-		<input type="text" name="cidade" id="cidade-input" maxlength="28" required>
-		<label for="estado-input">Estado:</label>
-		<select name="estado" id="estado-input" required>
+		<label class="labels-ende"  for="endereco-input">Endereço:</label>
+		<input type="text" name="endereco" id="endereco-input" class="inputs-ende inputs" maxlength="200" required>
+		<label class="labels-ende"  for="cidade-input">Cidade:</label>
+		<input type="text" name="cidade" id="cidade-input" class="inputs-ende inputs" maxlength="28" required>
+		<label class="labels-ende"  for="estado-input">Estado:</label>
+		<select name="estado" id="estado-input" class="inputs-ende inputs" required>
 
 		</select>
-		<label for="casa-input">Casa</label>
-		<input type="radio" name="moradia" id="casa-input" required>
-		<label for="apto-input">Apartamento</label>
-		<input type="radio" name="moradia" id="apto-input" required>
+		<label class="labels-moradia"  for="casa-input">Casa</label>
+		<input type="radio" name="moradia" id="casa-input" class="moradia-input" required>
+		<label class="labels-moradia"  for="apto-input">Apartamento</label>
+		<input type="radio" name="moradia" id="apto-input" class="moradia-input" required>
 	</fieldset>
 	<fieldset id="ultimo-emprego">
-		<label for="resumo-curriculo">Resumo do Currículo:</label>
-		<textarea name="curriculo" id="resumo-curriculo" cols="30" rows="10" maxlength="1000" required></textarea>
+		<label class="labels-curriculo"  for="resumo-curriculo">Resumo do Currículo:</label>
+		<textarea name="curriculo" id="resumo-curriculo" class="inputs inputs-curriculo" cols="30" rows="10" maxlength="1000" required></textarea>
 		<br>
-		<label for="cargo-input">Cargo:</label>
-		<input type="text" name="cargo" id="cargo-input" maxlength="40" required>
-		<label for="descricao-cargo-input">Descrição do cargo:</label>
-		<input type="text" name="cargo" id="descricao-cargo-input" maxlength="500" required>
-		<p>Data de início:</p>
+		<label class="labels-curriculo"  for="cargo-input">Cargo:</label>
+		<input type="text" name="cargo" id="cargo-input"  class="inputs inputs-curriculo"maxlength="40" required>
+		<label class="labels-curriculo"  for="descricao-cargo-input">Descrição do cargo:</label>
+		<input type="text" name="cargo" id="descricao-cargo-input" class="inputs inputs-curriculo" maxlength="500" required>
+		<p class="labels">Data de início:</p>
 		<label for="dia-input">Dia:</label>
-		<input type="text" name="dia" id="dia-input">
+		<input type="text" name="dia" id="dia-input" class="inputs">
 		<label for="mes-input">Mês:</label>
-		<input type="text" name="mes" id="mes-input">
+		<input type="text" name="mes" id="mes-input" class="inputs">
 		<label for="ano-input">Ano:</label>
-		<input type="text" name="ano" id="ano-input">
+		<input type="text" name="ano" id="ano-input" class="inputs">
 	</fieldset>
 	<button type="submit" id="enviar-btn">Enviar</button>
 </form>

@@ -1,10 +1,5 @@
 const enviarBtn = document.querySelector('#enviar-btn');
 const apagarBtn = document.querySelector('#apagar-btn');
-let diaValue = '';
-let mesValue = '';
-let anoValue = '';
-
-enviarBtn.addEventListener('click', sendData);
 
 function createBrazilStates() {
 	const estadosHolder = document.querySelector('#estado-input')
@@ -30,29 +25,118 @@ function verifyDate() {
 		diaValue = dia;
 		mesValue = mes;
 		anoValue = ano;
-		result = diaValue + "/" + mesValue + "/" + anoValue;
-	} else {
-		result = 'error'
+		result = dia + "/" + mes + "/" + ano;
+	} 
+	return result;
+}
+
+function verifyInputValues() {
+	const inputs = document.querySelectorAll('.inputs');
+	let result = true;
+	for (let i = 0; i < inputs.length; i += 1) {
+		const inputValue = inputs[i].value;
+		if (inputValue === '') {
+			result = false;
+			break;
+		}
 	}
 	return result;
+}
+
+function getIdValues(div) {
+	const inputs_id = document.querySelectorAll('.inputs-id');
+	const labels_id = document.querySelectorAll('.labels-id');
+	for (let i = 0; i < labels_id.length; i += 1) {
+		const inputValue = inputs_id[i].value;
+		const innerText = labels_id[i].innerText;
+		const pre = document.createElement("pre");
+		pre.innerText += innerText + inputValue;
+		div.appendChild(pre);
+	}
+}
+
+function getAdressValues(div) {
+	const labels_ende = document.querySelectorAll('.labels-ende');
+	const inputs_ende = document.querySelectorAll('.inputs-ende');
+
+	for (let i = 0; i < labels_ende.length; i += 1) {
+		const inputValue = inputs_ende[i].value;
+		const innerText = labels_ende[i].innerText;
+		const pre = document.createElement("pre");
+		pre.innerText += innerText + inputValue;
+		div.appendChild(pre);
+	}
+}
+
+function getHouseValues(div) {
+	const moradia = document.querySelectorAll('.moradia-input');
+	const labels_moradia = document.querySelectorAll('.labels-moradia');
+	for (let i = 0; i < moradia.length; i += 1) {
+		const moradiaValue = moradia[i].checked;
+		if (moradiaValue) {
+			const innerText = 'Moradia:';
+			const inputValue = labels_moradia[i].innerText;
+			const pre = document.createElement("pre");
+			pre.innerText += innerText + inputValue;
+			div.appendChild(pre);
+		}
+	}
+}
+
+function getCurriculumValues(div) {
+	const labels_curriculo = document.querySelectorAll('.labels-curriculo');
+	const inputs_curriculo = document.querySelectorAll('.inputs-curriculo');
+
+	for (let i = 0; i < labels_curriculo.length; i += 1) {
+		const inputValue = inputs_curriculo[i].value;
+		const innerText = labels_curriculo[i].innerText;
+		const pre = document.createElement("pre");
+		pre.innerText += innerText + inputValue;
+		div.appendChild(pre);
+	}	
+}
+
+function getDateValues(div) {
+	const value = verifyDate();
+	const text = 'Data de início:'
+	const pre = document.createElement("pre");
+	pre.innerText += text + value;
+	div.appendChild(pre);
 }
 
 function createDataFeedback() {
 	const body = document.querySelector('#main');
 	const div = document.createElement("div");
+
+	getIdValues(div);
+	getAdressValues(div);
+	getHouseValues(div);
+	getCurriculumValues(div);
+	getDateValues(div);
+	body.appendChild(div);
 }
-
-
-
-
-
 
 function sendData(event) {
+	event.preventDefault();
 	let canMakeData = verifyDate();
-	if (canMakeData === 'error') {
+	let inputsValues = verifyInputValues();
+	if (canMakeData === null) {
 		window.alert("Dia, Mês ou Ano Inválido");
-		console.log("como tá: " + canMakeData);
+		return 'Error';
+	} else if (inputsValues === false) {
+		window.alert("Preencha todos os campos");
+		return 'Error';
+	} else {
+		createDataFeedback();
 	}
-	//event.preventDefault();
-	
 }
+
+function eraseValues() {
+	const inputs = document.querySelectorAll('.inputs');
+	for (let i = 0; i < inputs.length; i += 1) {
+		inputs[i].value = '';
+	}
+}
+
+enviarBtn.addEventListener('click', sendData);
+apagarBtn.addEventListener('click', eraseValues);
