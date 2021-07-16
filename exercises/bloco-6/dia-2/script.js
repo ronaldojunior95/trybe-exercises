@@ -1,5 +1,12 @@
 const enviarBtn = document.querySelector('#enviar-btn');
 const apagarBtn = document.querySelector('#apagar-btn');
+const dia = document.querySelector('#datepicker');
+
+function createCalendar() {
+	flatpickr('#datepicker', {dateFormat: 'd/m/Y', locale: 'pt'});
+}
+
+createCalendar();
 
 function createBrazilStates() {
 	const estadosHolder = document.querySelector('#estado-input')
@@ -17,17 +24,9 @@ function createBrazilStates() {
 createBrazilStates();
 
 function verifyDate() {
-	const dia = document.querySelector('#dia-input').value;
-	const mes = document.querySelector('#mes-input').value;
-	const ano = document.querySelector('#ano-input').value;
-	let result = null
-	if (dia > 0 && dia <= 31 || mes > 0 && mes <= 12 || ano > 0) {
-		diaValue = dia;
-		mesValue = mes;
-		anoValue = ano;
-		result = dia + "/" + mes + "/" + ano;
-	} 
-	return result;
+	let value = dia.value;
+	console.log(value);
+	return value;
 }
 
 function verifyInputValues() {
@@ -154,8 +153,12 @@ function sendData(event) {
 
 function eraseValues() {
 	const inputs = document.querySelectorAll('.inputs');
+	const dataDiv = document.querySelector('.data-div');
 	for (let i = 0; i < inputs.length; i += 1) {
 		inputs[i].value = '';
+	}
+	if (dataDiv !== null) {
+		document.querySelector('body').removeChild(dataDiv);
 	}
 }
 

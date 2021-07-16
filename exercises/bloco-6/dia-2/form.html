@@ -4,50 +4,73 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 	<title>Form Currículo</title>
 </head>
-<body id="main">
+<body id="main" class="bg-light">
 	<form action="GET">
-	<fieldset id="dados-pessoais">
-		<label class="labels-id" for="name-input">Nome:</label>
-		<input type="text" name="name" id="name-input" class="inputs-id inputs"  maxlength="40" required>
-		<label class="labels-id"  for="email-input">Email:</label>
-		<input type="email" name="email" id="email-input" class="inputs-id inputs" maxlength="50" required>
-		<label class="labels-id"  for="cpf-input">Cpf:</label>
-		<input type="text" name="cpf" id="cpf-input" class="inputs-id inputs" maxlength="11" required>
-		<br>
-		<label class="labels-ende"  for="endereco-input">Endereço:</label>
-		<input type="text" name="endereco" id="endereco-input" class="inputs-ende inputs" maxlength="200" required>
-		<label class="labels-ende"  for="cidade-input">Cidade:</label>
-		<input type="text" name="cidade" id="cidade-input" class="inputs-ende inputs" maxlength="28" required>
-		<label class="labels-ende"  for="estado-input">Estado:</label>
-		<select name="estado" id="estado-input" class="inputs-ende inputs" required>
-
-		</select>
-		<label class="labels-moradia"  for="casa-input">Casa</label>
-		<input type="radio" name="moradia" id="casa-input" class="moradia-input" required>
-		<label class="labels-moradia"  for="apto-input">Apartamento</label>
-		<input type="radio" name="moradia" id="apto-input" class="moradia-input" required>
-	</fieldset>
-	<fieldset id="ultimo-emprego">
-		<label class="labels-curriculo"  for="resumo-curriculo">Resumo do Currículo:</label>
-		<textarea name="curriculo" id="resumo-curriculo" class="inputs inputs-curriculo" cols="30" rows="10" maxlength="1000" required></textarea>
-		<br>
-		<label class="labels-curriculo"  for="cargo-input">Cargo:</label>
-		<input type="text" name="cargo" id="cargo-input"  class="inputs inputs-curriculo"maxlength="40" required>
-		<label class="labels-curriculo"  for="descricao-cargo-input">Descrição do cargo:</label>
-		<input type="text" name="cargo" id="descricao-cargo-input" class="inputs inputs-curriculo" maxlength="500" required>
-		<p class="labels">Data de início:</p>
-		<label for="dia-input">Dia:</label>
-		<input type="text" name="dia" id="dia-input" class="inputs">
-		<label for="mes-input">Mês:</label>
-		<input type="text" name="mes" id="mes-input" class="inputs">
-		<label for="ano-input">Ano:</label>
-		<input type="text" name="ano" id="ano-input" class="inputs">
-	</fieldset>
-	<button type="submit" id="enviar-btn">Enviar</button>
+		<div class="mb-3 container">
+			<h1 class="text-center">Currículo</h1>
+		</div>
+		<div class="mb-3 container">
+			<label class="labels-id form-label" for="name-input">Nome:</label>
+			<input type="text" name="name" id="name-input" class="inputs-id inputs form-control"  maxlength="40" required placeholder="Seu Nome Aqui">
+		</div>
+		<div class="mb-3 container">
+			<label class="labels-id form-label"  for="email-input">Email:</label>
+			<input type="email" name="email" id="email-input" class="inputs-id inputs form-control" maxlength="50" required placeholder="seuemail@email">
+		</div>
+		<div class="mb-3 container">
+			<label class="labels-id form-label"  for="cpf-input">Cpf:</label>
+			<input type="text" name="cpf" id="cpf-input" class="inputs-id inputs form-control" maxlength="11" required placeholder="Somente Números">
+		</div>
+		<div class="mb-3 container">
+			<label class="labels-ende form-label"  for="endereco-input">Endereço:</label>
+			<input type="text" name="endereco" id="endereco-input" class="inputs-ende inputs form-control" maxlength="200" required placeholder="Seu Endereço">
+		</div>
+		<div class="mb-3 container">
+			<label class="labels-ende form-label"  for="cidade-input">Cidade:</label>
+			<input type="text" name="cidade" id="cidade-input" class="inputs-ende inputs form-control" maxlength="28" required
+			placeholder="Sua Cidade">
+		</div>
+		<div class="mb-3 container">
+			<label class="labels-ende form-label"  for="estado-input">Estado:</label>
+			<select name="estado" id="estado-input" class="inputs-ende inputs form-select" required>
+			</select>
+		</div>
+		<div class="form-check container">
+			<label class="labels-moradia form-check-label"  for="casa-input">Casa</label>
+			<input type="radio" name="moradia" id="casa-input" class="moradia-input form-check-input" required>
+		</div>
+		<div class="form-check container">
+			<label class="labels-moradia form-check-label"  for="apto-input">Apartamento</label>
+			<input type="radio" name="moradia" id="apto-input" class="moradia-input form-check-input" required>
+		</div>
+		<div class="mb-3 container">
+			<label class="labels-curriculo form-label"  for="resumo-curriculo">Resumo do Currículo:</label>
+			<textarea name="curriculo" id="resumo-curriculo" class="inputs inputs-curriculo form-control" cols="30" rows="10" maxlength="1000" required placeholder="Resumo com o máximo de 1000 Caracteres"></textarea>
+		</div>
+		<div class="mb-3 container">
+			<label class="labels-curriculo form-label"  for="cargo-input">Cargo:</label>
+			<input type="text" name="cargo" id="cargo-input"  class="inputs inputs-curriculo form-control" maxlength="40" required placeholder="Cargo Aqui">
+		</div>
+		<div class="mb-3 container">
+			<label class="labels-curriculo form-label"  for="descricao-cargo-input">Descrição do cargo:</label>
+			<input type="text" name="cargo" id="descricao-cargo-input" class="inputs inputs-curriculo form-control" maxlength="500" required placeholder="Descrição do Cargo">
+		</div>
+		<div class="form-outline mb-3 container">
+			<label for="datepicker" class="form-label">Data de Início:</label>
+			<input type="text" id="datepicker" class="inputs form-control" placeholder="Clique Para Selecionar a Data">
+		</div>
+		<div class="mb-3 container">
+			<button type="submit" id="enviar-btn" class="btn btn-outline-success">Enviar</button>
+			<button id="apagar-btn" class="btn btn-outline-danger">Apagar</button>
+		</div>
 </form>
-<button id="apagar-btn">Apagar</button>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://npmcdn.com/flatpickr@4.6.9/dist/l10n/pt.js"></script>
 <script src="script.js"></script>
+</script>
 </body>
 </html>
