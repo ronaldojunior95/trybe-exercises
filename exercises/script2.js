@@ -30,7 +30,7 @@ const size = (obj) => keys(obj).length;
 
 const values = (obj) => Object.values(obj);
 
-const allLessons = Object.assign({}, {lesson1, lesson2, lesson3});
+const allLessons = Object.assign({}, { lesson1, lesson2, lesson3 });
 
 const totalAlunos = (obj) => obj.lesson1.numeroEstudantes + obj.lesson2.numeroEstudantes + obj.lesson3.numeroEstudantes;
 
@@ -38,4 +38,15 @@ const getValueByNumber = (obj, id) => values(obj)[id];
 
 const verifyPair = (obj, key, value) => obj[key] === value ? true : false;
 
-console.log(verifyPair(lesson3, 'materia', 'Maria Clara'));
+const verifyMathClass = (obj) => {
+	let total = 0;
+	const arrayObj = keys(obj);
+	for (let i = 0; i < arrayObj.length; i += 1) {
+		if (obj[arrayObj[i]].materia === 'Matemática'){
+			total += obj[arrayObj[i]].numeroEstudantes;
+		}
+	}
+	return total;
+};
+
+console.log(verifyMathClass(allLessons));
