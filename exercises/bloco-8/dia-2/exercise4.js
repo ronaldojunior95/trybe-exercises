@@ -128,7 +128,18 @@ assert.strictEqual(everyoneWasBornOnSecXX(), expectedResult2);
 const expectedResult3 = true;
 
 function someBookWasReleaseOnThe80s() {
-  return books.some((book) => book.releaseYear >= 1980 && book.releaseYear < 1990);
+	return books.some((book) => book.releaseYear >= 1980 && book.releaseYear < 1990);
 }
 
 assert.strictEqual(someBookWasReleaseOnThe80s(), expectedResult3);
+
+const expectedResult4 = false;
+
+function authorUnique() {
+	return books.every((book) =>
+		!books.some((bookSome) =>
+			(bookSome.author.birthYear === book.author.birthYear)
+			&& (bookSome.author.name !== book.author.name)));
+}
+
+assert.strictEqual(authorUnique(), expectedResult4);
