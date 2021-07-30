@@ -6,10 +6,10 @@ const result = (gabarito, respostasEstudante, check) => {
 	return check(gabarito, respostasEstudante);
 };
 
-const checkAnswer = (gabarito, respostasEstudante) => {
+const checkAnswer = (rightAnswers, studentAnswer) => {
 	let count = 0;
-	for (let index = 0; index < gabarito.length; index += 1) {
-		count = gabarito[index] === respostasEstudante[index] ? count += 1 : count -= 0.5;
+	for (let index = 0; index < rightAnswers.length; index += 1) {
+		count = rightAnswers[index] === studentAnswer[index] ? count += 1 : count -= 0.5;
 	}
 	return count;
 };
